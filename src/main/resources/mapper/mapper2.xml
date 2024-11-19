@@ -30,4 +30,11 @@
         from emp
         where ename like #{ename}
     </select>
+
+    <!-- String X empto -->
+    <select id="selectlist4" parameterType="com.example.mybatis.model.EmpTO" resultType="com.example.mybatis.model.EmpTO">
+        select empno, ename, job, deptno
+        from emp
+        where job = #{job} and deptno=#{deptno}
+    </select>
 </mapper>
