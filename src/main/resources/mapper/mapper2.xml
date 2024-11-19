@@ -23,4 +23,11 @@
         from emp
         where deptno = #{deptno}
     </select>
+
+
+    <select id="selectlist3" parameterType="String" resultType="com.example.mybatis.model.EmpTO">
+        select empno, ename, job, deptno
+        from emp
+        where ename like #{ename}
+    </select>
 </mapper>

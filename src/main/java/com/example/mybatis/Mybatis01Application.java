@@ -69,7 +69,9 @@ public class Mybatis01Application implements CommandLineRunner {
 //        for(DeptTO to : list) {
 //            System.out.println(to.getDeptno() + "/" + to.getDname() + "/" + to.getLoc());
 //        }
-        List<EmpTO> list =sqlSession.selectList("selectlist2", "10");
+//        List<EmpTO> list =sqlSession.selectList("selectlist2", "10");
+        List<EmpTO> list =sqlSession.selectList("selectlist3", "S%");
+
         for (EmpTO to : list) {
             System.out.println(to.getEmpno() + "/" + to.getEname() + "/" + to.getDeptno());
         }
