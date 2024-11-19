@@ -1,6 +1,7 @@
 package com.example.mybatis;
 
 import com.example.mybatis.model.DeptTO;
+import com.example.mybatis.model.EmpTO;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -63,11 +64,16 @@ public class Mybatis01Application implements CommandLineRunner {
 //        DeptTO to  = sqlSession.selectOne("selectone");
 //        System.out.println(to.getDeptno() + "/" + to.getDname() + "/" + to.getLoc());
 
-        List<DeptTO> list =sqlSession.selectList("selectlist1");
-
-        for(DeptTO to : list) {
-            System.out.println(to.getDeptno() + "/" + to.getDname() + "/" + to.getLoc());
+//        List<DeptTO> list =sqlSession.selectList("selectlist1");
+//
+//        for(DeptTO to : list) {
+//            System.out.println(to.getDeptno() + "/" + to.getDname() + "/" + to.getLoc());
+//        }
+        List<EmpTO> list =sqlSession.selectList("selectlist2", "10");
+        for (EmpTO to : list) {
+            System.out.println(to.getEmpno() + "/" + to.getEname() + "/" + to.getDeptno());
         }
+
         sqlSession.close();
     }
 }
