@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mybatis"> <!--namespace => 패키지 -->
+    <!--sql 문의 저장 -->
+    <!-- id는이름 resultMap=> 어떤타입으로 갈껀지-->
+<!--    <select id="select" resultMap="String">-->
+<!--        select now() as now-->
+<!--    </select>-->
+
+    <select id="selectone" resultType="com.example.mybatis.model.DeptTO">
+        select deptno, dname, loc
+        from dept
+        where deptno = 10
+    </select>
+</mapper>
