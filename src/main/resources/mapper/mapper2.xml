@@ -12,4 +12,9 @@
         from dept
         where deptno = 10
     </select>
+
+    <select id="selectlist1" resultType="com.example.mybatis.model.DeptTO">
+        select deptno, dname, loc
+        from dept
+    </select>
 </mapper>

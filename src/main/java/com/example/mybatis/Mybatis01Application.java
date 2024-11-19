@@ -60,9 +60,14 @@ public class Mybatis01Application implements CommandLineRunner {
 //            System.out.println(map.get("deptno") + "/" + map.get("dname") + "/" + map.get("loc"));
 //        }
 
-        DeptTO to  = sqlSession.selectOne("selectone");
-        System.out.println(to.getDeptno() + "/" + to.getDname() + "/" + to.getLoc());
+//        DeptTO to  = sqlSession.selectOne("selectone");
+//        System.out.println(to.getDeptno() + "/" + to.getDname() + "/" + to.getLoc());
 
+        List<DeptTO> list =sqlSession.selectList("selectlist1");
+
+        for(DeptTO to : list) {
+            System.out.println(to.getDeptno() + "/" + to.getDname() + "/" + to.getLoc());
+        }
         sqlSession.close();
     }
 }
